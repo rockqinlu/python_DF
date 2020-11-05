@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 4), columns=['A', 'B', 'C', 'D'])
+df2 = pd.DataFrame(np.random.randn(4, 3), columns=['A', 'B', 'C'])
+df3 = pd.DataFrame({'A': [1., np.nan, 3., 5., np.nan],
+                    'B': [np.nan, 2., 3., np.nan, 6.]})
+df4 = pd.DataFrame({'A': [5., 2., 4., np.nan, 3., 7.],
+                    'B': [np.nan, np.nan, 3., 4., 6., 8.]})
+print('--------------------------- Begin --------------------------------------')
+print(df)
+print('--------------------------- 1 df --------------------------------------')
+print(df2)
+print('--------------------------- 2 df2 --------------------------------------')
+print(df.add(df2,fill_value=0))
+print('--------------------------- 3 df.add(df2) --------------------------------------')
+print(df3)
+print('--------------------------- 4 df3 --------------------------------------')
+print(df4)
+print('--------------------------- 5 df4 --------------------------------------')
+print(df3.add(df4,fill_value=0))
+print('--------------------------- 6 add2 --------------------------------------')
+print(df3.combine_first(df4))
+print('--------------------------- 7 combine_first --------------------------------------')
+print(df)
+print('===========================================================')
+print(df.describe())
+print('--------------------------- 8 combine_first --------------------------------------')
+arr = np.random.randn(8)
+factor = pd.cut(arr, 4)
+print(arr)
+print(factor)
