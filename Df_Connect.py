@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+# import numpy as np
 
 df1 = pd.DataFrame({'A': ['A0', 'A1', 'A2', 'A3'],
                     'B': ['B0', 'B1', 'B2', 'B3'],
