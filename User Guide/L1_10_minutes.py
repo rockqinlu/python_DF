@@ -54,3 +54,15 @@ print(df.loc['20200102':'20200104', ['A', 'B']])
 # Selection by position
 print(df.iloc[3])
 print(df.iloc[3:5, 0:2])
+# Boolean indexing
+print(df[df['A'] > 0])
+print(df[df > 0])
+# Pivot tables
+print("------------------------------- Pivot tables ---------------------------------------------")
+df = pd.DataFrame({'A': ['one', 'one', 'two', 'three'] * 3,
+                   'B': ['A', 'B', 'C'] * 4,
+                   'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] * 2,
+                   'D': np.random.randn(12),
+                   'E': np.random.randn(12)})
+print(df)
+print(pd.pivot_table(df, values='D', index=['A', 'B'], columns=['C']))
